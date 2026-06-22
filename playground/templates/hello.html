@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 </head>
 <body>
-    <h1>hello {{name}}</h1>
+    <table>
+        <tr>
+            <th>title</th>
+            <th>description</th>
+            <th>unit price</th>
+            <th>inventory</th>
+            <th>slug</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.title }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.unit_price }}</td>
+            <td>{{ product.inventory }}</td>
+            <td>{{ product.slug }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
